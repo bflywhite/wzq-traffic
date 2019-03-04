@@ -3,6 +3,7 @@ import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Convolution2D, MaxPooling2D, Flatten
 from keras.optimizers import Adam
+from sklearn.metrics import classification_report
 import pickle
 
 # download the mnist to the path '~/.keras/datasets/' if it is the first time to be called
@@ -80,12 +81,12 @@ model.compile(
     metrics=['accuracy'])
 
 print('\nTraining-----------')
-model.fit(X_train, y_train, epochs=1000, batch_size=64, verbose=1, validation_split=0.2)
+model.fit(X_train, y_train, epochs=50, batch_size=64, verbose=1, validation_split=0.2)
 
 model.save("model2class.h5")
 
 print('\nTesting------------')
 loss, accuracy = model.evaluate(X_test, y_test)
-
+print()
 print('test loss: ', loss)
 print('test accuracy: ', accuracy)

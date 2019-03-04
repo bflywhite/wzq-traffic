@@ -38,13 +38,11 @@ def mkdir_p(path):
 
 
 if __name__ == '__main__':
-    files = os.listdir(r'F:\fast\cnn\testdata\b')
+    files = os.listdir(r'C:\Users\Administrator\Desktop\12-21\cnn\testdata\m')
     print(files)
     for i,j in enumerate(files):
         if i < 10:
-            data = getMatrixfrom_pcap(
-                r'F:\fast\3_ProcessedSession\TrimedSession\Train\Gmail-ALL\Gmail.pcap.TCP_1-1-0-51_3224_1-2-179-211_443.pcap',
-                28)
+            data = getMatrixfrom_pcap(r'C:\Users\Administrator\Desktop\12-21\cnn\testdata\m\\'+j,28)
             im = Image.fromarray(data)
             im.save('生成图\\'+j+'.png')
 
